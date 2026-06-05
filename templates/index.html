@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Trek Explorer Company</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🏔 Trek Explorer Company</h1>
+    <p>Trusted Himalayan Trek Booking Platform</p>
+    <span>Total Bookings: {{ total }}</span>
+</header>
+
+<section class="hero">
+    Explore Himalayas Like Never Before
+</section>
+
+<section class="container">
+
+<h2>Book Your Trek</h2>
+
+<form action="/book" method="POST">
+
+<input name="name" placeholder="Full Name" required>
+<input name="email" placeholder="Email Address" required>
+<input name="phone" placeholder="Phone Number" required>
+
+<select name="trek">
+    <option>Kedarkantha Trek</option>
+    <option>Valley of Flowers</option>
+    <option>Har Ki Dun</option>
+    <option>Chopta Tungnath</option>
+</select>
+
+<input name="people" placeholder="Number of People" required>
+<input name="days" placeholder="Days" required>
+
+<textarea name="message" placeholder="Special Requirements"></textarea>
+
+<button type="submit">Book Now</button>
+
+</form>
+
+<a href="/admin">Admin Panel</a>
+
+</section>
+
+</body>
+</html>

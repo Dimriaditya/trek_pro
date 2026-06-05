@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
+</head>
+
+<body style="font-family:Arial">
+
+<h1>📊 Admin Dashboard</h1>
+
+<table border="1" cellpadding="10">
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Trek</th>
+<th>People</th>
+<th>Days</th>
+<th>Message</th>
+</tr>
+
+{% for r in data %}
+<tr>
+<td>{{ r[0] }}</td>
+<td>{{ r[1] }}</td>
+<td>{{ r[2] }}</td>
+<td>{{ r[3] }}</td>
+<td>{{ r[4] }}</td>
+<td>{{ r[5] }}</td>
+<td>{{ r[6] }}</td>
+<td>{{ r[7] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>
