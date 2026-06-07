@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Response
 import sqlite3
 
 app = Flask(__name__)
@@ -45,9 +45,19 @@ def book():
     return render_template("success.html", name=data[0], trek=data[3])
 
 
-# ---------------- ADMIN ----------------
+# ---------------- ADMIN ---------------
 @app.route("/admin")
 def admin():
+
+    auth = request.authorization
+
+    if not auth or auth.username != "akash semwal" or auth.password != "dimri@#&$4927":
+        return Response(
+            "Login Required",
+            401,
+            {"WWW-Authenticate": 'Basic realm="Login Required"'}
+        )
+
     conn = sqlite3.connect(DB)
     cur = conn.cursor()
     cur.execute("SELECT * FROM bookings ORDER BY id DESC")
