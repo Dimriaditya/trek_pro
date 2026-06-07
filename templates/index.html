@@ -1,122 +1,165 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html lang="en">
 <head>
-<title>Himalaya Trek Explorer</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body {
+<title>The Himalayan Souls Trek</title><style>
+*{
 margin:0;
-font-family: 'Arial';
-background:#0b0f19;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0b1220;
 color:white;
 }
 
-.hero {
+.hero{
 height:100vh;
-background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470');
+background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b');
 background-size:cover;
+background-position:center;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+padding:20px;
 }
 
-.hero h1 {
-font-size:50px;
-margin:0;
+.hero-content h1{
+font-size:60px;
+margin-bottom:15px;
 }
 
-.hero p {
-font-size:18px;
-opacity:0.8;
+.hero-content p{
+font-size:20px;
+margin-bottom:20px;
 }
 
-.btn {
-padding:12px 25px;
-background:#ffcc00;
+.btn{
+background:#f5c542;
 color:black;
+padding:12px 25px;
 border:none;
-margin-top:20px;
+border-radius:30px;
+font-weight:bold;
 cursor:pointer;
+text-decoration:none;
 }
 
-.section {
-padding:50px;
+.section{
+padding:70px 20px;
 text-align:center;
 }
 
-.card {
-background:#1c1f2a;
-padding:20px;
-margin:10px;
-display:inline-block;
-width:250px;
-border-radius:10px;
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+margin-top:30px;
 }
 
-input, select, textarea {
-width:90%;
-padding:10px;
-margin:8px;
+.card{
+background:#182235;
+padding:20px;
+border-radius:15px;
+width:280px;
 }
 
-form {
-background:#1c1f2a;
-padding:20px;
-border-radius:10px;
-max-width:400px;
+.card h3{
+margin-bottom:10px;
+}
+
+.form-box{
+max-width:500px;
 margin:auto;
+background:#182235;
+padding:25px;
+border-radius:15px;
 }
-</style>
-</head>
 
-<body>
+input,select,textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:8px;
+}
 
-<div class="hero">
-<h1>Himalaya Trek Explorer</h1>
-<p>Not Just Travel — It's an Experience</p>
-<button class="btn">Book Your Trek</button>
+button{
+background:#f5c542;
+padding:12px;
+width:100%;
+border:none;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+}
+
+.footer{
+background:#111827;
+padding:30px;
+text-align:center;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+}
+</style></head><body><section class="hero">
+<div class="hero-content">
+<h1>The Himalayan Souls Trek</h1>
+<p>Where Every Trail Tells A Story</p>
+<a href="#booking" class="btn">Book Your Adventure</a>
 </div>
-
-<div class="section">
-
-<h2>Our Treks</h2>
-
-<div class="card">Kedarkantha<br>5 Days</div>
-<div class="card">Valley of Flowers<br>6 Days</div>
-<div class="card">Har Ki Dun<br>7 Days</div>
-
-</div>
-
-<div class="section">
-
-<h2>Book Now</h2>
-
-<form action="/book" method="POST">
-
-<input name="name" placeholder="Name">
-<input name="email" placeholder="Email">
-<input name="phone" placeholder="Phone">
-
-<select name="trek">
-<option>Kedarkantha</option>
+</section><section class="section">
+<h2>Why Choose Us?</h2>
+<div class="cards"><div class="card">
+<h3>Expert Guides</h3>
+<p>Local Himalayan experts with real trekking experience.</p>
+</div><div class="card">
+<h3>Safe Adventures</h3>
+<p>Safety-first trekking experiences for every traveler.</p>
+</div><div class="card">
+<h3>Best Memories</h3>
+<p>Create unforgettable moments in the Himalayas.</p>
+</div></div>
+</section><section class="section">
+<h2>Popular Treks</h2><div class="cards"><div class="card">
+<h3>Kedarkantha Trek</h3>
+<p>5 Days • Easy</p>
+<p>Starting From ₹6999</p>
+</div><div class="card">
+<h3>Valley of Flowers</h3>
+<p>6 Days • Moderate</p>
+<p>Starting From ₹7999</p>
+</div><div class="card">
+<h3>Har Ki Dun</h3>
+<p>7 Days • Moderate</p>
+<p>Starting From ₹8999</p>
+</div></div>
+</section><section class="section">
+<h2>About Us</h2><p style="max-width:800px;margin:auto;">
+The Himalayan Souls Trek is dedicated to providing authentic Himalayan experiences,
+professional trek planning, local expertise, and unforgettable adventures across Uttarakhand and beyond.
+</p></section><section class="section" id="booking"><h2>Book Your Trek</h2><div class="form-box"><form action="/book" method="POST"><input type="text" name="name" placeholder="Full Name" required><input type="email" name="email" placeholder="Email Address" required><input type="text" name="phone" placeholder="Phone Number" required><select name="trek">
+<option>Kedarkantha Trek</option>
 <option>Valley of Flowers</option>
 <option>Har Ki Dun</option>
-</select>
+</select><input type="number" name="people" placeholder="Number of People" required><input type="number" name="days" placeholder="Days" required><textarea name="message" placeholder="Additional Message"></textarea><button type="submit">Submit Booking Request</button>
 
-<input name="people" placeholder="People">
-<input name="days" placeholder="Days">
-
-<textarea name="message" placeholder="Message"></textarea>
-
-<button class="btn">Confirm Booking</button>
-
-</form>
-
-</div>
-
-</body>
+</form></div></section><section class="footer"><h3>The Himalayan Souls Trek</h3><p>📞 +91 YOUR_NUMBER</p>
+<p>📧 your@email.com</p></section><a class="whatsapp" href="https://wa.me/91YOURNUMBER">
+WhatsApp
+</a></body>
 </html>
-
