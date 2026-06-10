@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, Response
+from flask import Flask, render_template, request, Response, send_from_directory
 import sqlite3
 
 app = Flask(__name__)
@@ -65,6 +65,13 @@ def admin():
     conn.close()
 
     return render_template("admin.html", data=data)
+@app.route("/robots.txt")
+def robots():
+    return send_from_directory("static", "robots.txt")
+
+@app.route("/sitemap.xml")
+def sitemap():
+    return send_from_directory("static", "sitemap.xml")
 
 
 if __name__ == "__main__":
