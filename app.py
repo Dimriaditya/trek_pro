@@ -20,6 +20,14 @@ def home():
 def kedarkantha():
     return render_template("kedarkantha.html")
 
+@app.route("/valley-of-flowers")
+def valley_of_flowers():
+    return render_template("valley_of_flowers.html")
+
+@app.route("/har-ki-dun")
+def har_ki_dun():
+    return render_template("har_ki_dun.html")
+
 # ---------------- BOOKING ----------------
 @app.route("/book", methods=["POST"])
 def book():
