@@ -16,6 +16,9 @@ def home():
 
     return render_template("index.html", total=total)
 
+@app.route("/kedarkantha")
+def kedarkantha():
+    return render_template("kedarkantha.html")
 
 # ---------------- BOOKING ----------------
 @app.route("/book", methods=["POST"])
